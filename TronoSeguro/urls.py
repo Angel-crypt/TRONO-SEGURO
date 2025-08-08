@@ -3,7 +3,7 @@ URL configuration for TronoSeguro project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
-Examples:
+Examples:New Collection
 Function views
     1. Add an import:  from my_app import views
     2. Add a URL to urlpatterns:  path('', views.home, name='home')
@@ -17,7 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from ToiFinder.views import UserView, PaginaView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("user/", UserView.as_view(), name="user"),
+    path("pagina/", PaginaView.as_view(), name="home"),
 ]
