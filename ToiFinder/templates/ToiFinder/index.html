@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trono Seguro</title>
+</head>
+<body>
+    <h1>Bienvenido a Trono Seguro</h1>
+    {% for baño in baños %}
+        <div>
+            <h2>{{ baño.nombre }}</h2>
+            <p>{{ baño.descripcion }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
