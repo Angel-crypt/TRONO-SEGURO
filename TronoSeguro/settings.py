@@ -25,6 +25,7 @@ TEST_HEADLESS = os.getenv("TEST_HEADLESS", "False") == "True"
 print(f"DEBUG: {DEBUG}")
 print(f"HOST: {HOST}")
 
+CHROMA_DB_PATH = BASE_DIR / 'chroma_db'
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",")
 
