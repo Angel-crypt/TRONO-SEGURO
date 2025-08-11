@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - ToiFinder</title>
+    <link rel="stylesheet" href="{% static 'ToiFinder/css/login.css' %}">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Nombre de usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="button" onclick="login()">Iniciar Sesión</button>
+        </form>
+        <p class="error-message" id="error-message"></p>
+        <p class="success-message" id="success-message"></p>
+    </div>
+
+</body>
+    <script src="{% static 'ToiFinder/js/login.js' %}"></script>
+</html>
