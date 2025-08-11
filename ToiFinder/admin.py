@@ -9,7 +9,7 @@ class UserAdmin(admin.ModelAdmin):
     list_filter = ('created_at',)
 @admin.register(Bathroom)
 class BathroomAdmin(admin.ModelAdmin):
-    list_display = ('name', 'location', 'has_accessibility', 'is_free', 'is_clean', 'created_at')
+    list_display = ('name', 'location', 'has_accessibility', 'is_free', 'is_clean', 'created_at', 'id')
     search_fields = ('name', 'location')
     list_filter = ('has_accessibility', 'is_free', 'is_clean')
 @admin.register(Review)
