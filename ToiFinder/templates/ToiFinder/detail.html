@@ -51,7 +51,7 @@
             <ul>
                 {% for review in bathroom.reviews.all %}
                 <li>
-                    {{ review.comment }} ({{ review.rating }})
+                    <strong>{{ review.user.username }}</strong>: {{ review.comment }} ({{ review.rating }})
                 </li>
                 {% empty %}
                 <li>No hay comentarios disponibles.</li>
