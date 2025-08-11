@@ -1,64 +1,257 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Baños - ToiFinder</title>
+    <title>{{ bathroom.name }} - Detalles del Baño - ToiFinder</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'ToiFinder/css/styles.css' %}">
 </head>
 
 <body>
     <header>
-        <div>
-            <div>
-                <h1>ToiFinder</h1>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-toilet"></i> ToiFinder
+            </div>
+            <div class="header-actions">
+                <a href="{% url 'catalog' %}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Volver al catálogo
+                </a>
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-user"></i> Mi Cuenta
+                </a>
             </div>
         </div>
     </header>
 
-    <div>
-        <div>
-            <h2>Detalles de Baños</h2>
-        </div>
+    <main>
+        <section class="hero-section">
+            <h1>Detalles del Baño</h1>
+        </section>
 
-        <div>
-            <h3>{{ bathroom.name }}</h3>
-            <p>Ubicación: {{ bathroom.location.name }}</p>
-            <p>Coordenadas: {{ bathroom.location.latitude|floatformat:4 }}, {{ bathroom.location.longitude|floatformat:4 }}</p>
-            <p>Calificación promedio: {{ bathroom.average_rating|floatformat:3 }} ({{ bathroom.review_count }} reseñas)</p>
-            <p>
-                {% if bathroom.is_free %}
-                Gratuito
-                {% else %}
-                De pago
-                {% endif %}
-            </p>
-            <p>
-                {% if bathroom.has_accessibility %}
-                Accesible
-                {% endif %}
-            </p>
-            <p>
-                {% if bathroom.is_clean %}
-                Limpio
-                {% endif %}
-            </p>
-        </div>
+        <div class="detail-container">
+            <div class="detail-header">
+                <h2 class="bathroom-title">
+                    <span class="title-icon">
+                        <i class="fas fa-restroom"></i>
+                    </span>
+                    {{ bathroom.name }}
+                </h2>
 
-        <div>   
-            <h4>Comentarios</h4>
-            <ul>
-                {% for review in bathroom.reviews.all %}
-                <li>
-                    <strong>{{ review.user.username }}</strong>: {{ review.comment }} ({{ review.rating }})
-                </li>
-                {% empty %}
-                <li>No hay comentarios disponibles.</li>
-                {% endfor %}
-            </ul>
+                <div class="location-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>{{ bathroom.location.name }}</span>
+                </div>
+
+                <div class="coordinates">
+                    <i class="fas fa-crosshairs"></i>
+                    {{ bathroom.location.latitude|floatformat:4 }}, {{ bathroom.location.longitude|floatformat:4 }}
+                </div>
+            </div>
+
+            <div class="detail-content">
+                <div class="info-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Información General
+                    </h3>
+
+                    <div class="rating-display">
+                        <div class="rating-number">
+                            {% if bathroom.average_rating %}
+                            {{ bathroom.average_rating|floatformat:1 }}
+                            {% else %}
+                            N/A
+                            {% endif %}
+                        </div>
+                        <div class="rating-stars">
+                            {% if bathroom.average_rating %}
+                            {% with bathroom.average_rating|floatformat:0|add:0 as stars %}
+                            {% for i in "12345" %}
+                            {% if forloop.counter <= stars %} <i class="fas fa-star"></i>
+                                {% else %}
+                                <i class="far fa-star"></i>
+                                {% endif %}
+                                {% endfor %}
+                                {% endwith %}
+                                {% else %}
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                {% endif %}
+                        </div>
+                        <div class="rating-count">
+                            {{ bathroom.review_count }} {% if bathroom.review_count == 1 %}reseña{% else %}reseñas{% endif %}
+                        </div>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-item {% if bathroom.is_free %}active{% else %}inactive{% endif %}">
+                            <div class="feature-icon {% if bathroom.is_free %}active{% else %}inactive{% endif %}">
+                                {% if bathroom.is_free %}
+                                <i class="fas fa-coins"></i>
+                                {% else %}
+                                <i class="fas fa-money-bill-wave"></i>
+                                {% endif %}
+                            </div>
+                            <div class="feature-text">
+                                {% if bathroom.is_free %}
+                                Gratuito
+                                {% else %}
+                                De pago
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div
+                            class="feature-item {% if bathroom.has_accessibility %}active{% else %}inactive{% endif %}">
+                            <div
+                                class="feature-icon {% if bathroom.has_accessibility %}active{% else %}inactive{% endif %}">
+                                <i class="fas fa-wheelchair"></i>
+                            </div>
+                            <div class="feature-text">
+                                {% if bathroom.has_accessibility %}
+                                Accesible
+                                {% else %}
+                                No accesible
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="feature-item {% if bathroom.is_clean %}active{% else %}inactive{% endif %}">
+                            <div class="feature-icon {% if bathroom.is_clean %}active{% else %}inactive{% endif %}">
+                                <i class="fas fa-sparkles"></i>
+                            </div>
+                            <div class="feature-text">
+                                {% if bathroom.is_clean %}
+                                Limpio
+                                {% else %}
+                                Necesita limpieza
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="feature-item active">
+                            <div class="feature-icon active">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-text">
+                                Disponible 24/7
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if bathroom.description %}
+                    <div class="feature-item active" style="grid-column: 1/-1; margin-top: 1rem;">
+                        <div class="feature-icon active">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div>
+                            <div class="feature-text">Descripción</div>
+                            <p style="color: #64748b; margin-top: 0.5rem; line-height: 1.5;">{{ bathroom.description }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="reviews-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-comments"></i>
+                        Comentarios y Reseñas
+                    </h3>
+
+                    {% for review in recent_reviews %}
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">
+                                    {{ review.user.username|first|upper }}
+                                </div>
+                                <div class="reviewer-name">{{ review.user.username }}</div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i> {{ review.rating }}
+                            </div>
+                        </div>
+                        <div class="review-comment">{{ review.comment }}</div>
+                    </div>
+                    {% empty %}
+                    <div class="empty-reviews">
+                        <i class="fas fa-comment-slash"></i>
+                        <h4>No hay comentarios disponibles</h4>
+                        <p>Sé el primero en dejar una reseña sobre este baño</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="#" class="action-btn btn-review">
+                    Escribir reseña
+                </a>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <script>
+
+        // Animaciones de entrada
+        document.addEventListener('DOMContentLoaded', function () {
+            const detailContainer = document.querySelector('.detail-container');
+            detailContainer.style.opacity = '0';
+            detailContainer.style.transform = 'translateY(30px)';
+
+            setTimeout(() => {
+                detailContainer.style.transition = 'all 0.6s ease';
+                detailContainer.style.opacity = '1';
+                detailContainer.style.transform = 'translateY(0)';
+            }, 100);
+
+            // Animaciones escalonadas para las reseñas
+            const reviewItems = document.querySelectorAll('.review-item');
+            reviewItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(20px)';
+
+                setTimeout(() => {
+                    item.style.transition = 'all 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 200 + (index * 100));
+            });
+
+            // Animaciones para las características
+            const featureItems = document.querySelectorAll('.feature-item');
+            featureItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.9)';
+
+                setTimeout(() => {
+                    item.style.transition = 'all 0.4s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 100 + (index * 50));
+            });
+        });
+
+        // Efectos hover mejorados
+        document.querySelectorAll('.action-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-2px)';
+            });
+
+            btn.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 
 </html>
