@@ -1,0 +1,2232 @@
+[
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "juanperez",
+            "email": "juan.perez@example.com",
+            "password": "Jp2025!"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "maria_gonzalez",
+            "email": "maria.g@example.org",
+            "password": "Mg1234#"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "carlos_lopez",
+            "email": "carlos.lopez@example.net",
+            "password": "Cl7890$"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "sofia_martinez",
+            "email": "sofia.m@example.com",
+            "password": "Sm4567*"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "pedro_rivera",
+            "email": "pedro.rivera@example.org",
+            "password": "Pr1010!"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "ana_torres",
+            "email": "ana.t@example.net",
+            "password": "At2024#"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "luis_hernandez",
+            "email": "luis.h@example.com",
+            "password": "Lh9876$"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "laura_diaz",
+            "email": "laura.diaz@example.org",
+            "password": "Ld3210*"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "diego_sanchez",
+            "email": "diego.s@example.com",
+            "password": "Ds6543!"
+        }
+    },
+    {
+        "model": "ToiFinder.User",
+        "fields": {
+            "username": "clara_vargas",
+            "email": "clara.v@example.net",
+            "password": "Cv1111#"
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Plaza Sol",
+            "latitude": 19.4326,
+            "longitude": -99.1332
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Terminal Norte",
+            "latitude": 19.4789,
+            "longitude": -99.1401
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque Alameda",
+            "latitude": 19.4351,
+            "longitude": -99.1412
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Centro Comercial Estrella",
+            "latitude": 19.4207,
+            "longitude": -99.1663
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Universidad Metropolitana",
+            "latitude": 19.3912,
+            "longitude": -99.1745
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Museo Cultural",
+            "latitude": 19.4298,
+            "longitude": -99.1205
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estación Metro Centro",
+            "latitude": 19.4265,
+            "longitude": -99.1327
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Biblioteca Pública",
+            "latitude": 19.4401,
+            "longitude": -99.1298
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Hospital San José",
+            "latitude": 19.4103,
+            "longitude": -99.1502
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estadio Azteca",
+            "latitude": 19.3028,
+            "longitude": -99.1504
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Zoológico Chapultepec",
+            "latitude": 19.4231,
+            "longitude": -99.1887
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Teatro Bellas Artes",
+            "latitude": 19.4353,
+            "longitude": -99.1416
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Aeropuerto Benito Juárez",
+            "latitude": 19.4363,
+            "longitude": -99.0721
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Mercado La Merced",
+            "latitude": 19.4247,
+            "longitude": -99.1246
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estación de Tren Buenavista",
+            "latitude": 19.4471,
+            "longitude": -99.1516
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Catedral Metropolitana",
+            "latitude": 19.4342,
+            "longitude": -99.1330
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Campus Politécnico",
+            "latitude": 19.5006,
+            "longitude": -99.1402
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Centro de Convenciones Siglo XXI",
+            "latitude": 19.3954,
+            "longitude": -99.0915
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque Tecnológico IT",
+            "latitude": 19.4567,
+            "longitude": -99.1890
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Colonia Condesa",
+            "latitude": 19.4119,
+            "longitude": -99.1776
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Centro Histórico Zócalo",
+            "latitude": 19.4326,
+            "longitude": -99.1332
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Bosque de Tlalpan",
+            "latitude": 19.2904,
+            "longitude": -99.1626
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Zona Hotelera Polanco",
+            "latitude": 19.4320,
+            "longitude": -99.1912
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Laguna de Tequesquitengo",
+            "latitude": 18.9831,
+            "longitude": -99.1357
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Torre Reforma",
+            "latitude": 19.4243,
+            "longitude": -99.1749
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Zona Industrial Naucalpan",
+            "latitude": 19.4783,
+            "longitude": -99.2385
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Puerto de Veracruz",
+            "latitude": 19.2006,
+            "longitude": -96.1386
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Mirador Coyoacán",
+            "latitude": 19.3498,
+            "longitude": -99.1620
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Museo de Arte Moderno",
+            "latitude": 19.4257,
+            "longitude": -99.1823
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Jardín Botánico UNAM",
+            "latitude": 19.3147,
+            "longitude": -99.1948
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Plaza Garibaldi",
+            "latitude": 19.4402,
+            "longitude": -99.1398
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Mercado Sonora",
+            "latitude": 19.4137,
+            "longitude": -99.1260
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque México",
+            "latitude": 19.4120,
+            "longitude": -99.1690
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Centro Comercial Perisur",
+            "latitude": 19.3042,
+            "longitude": -99.1902
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estadio Olímpico Universitario",
+            "latitude": 19.3319,
+            "longitude": -99.1920
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Plaza Satélite",
+            "latitude": 19.5103,
+            "longitude": -99.2342
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque Hundido",
+            "latitude": 19.4028,
+            "longitude": -99.1707
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estación Metro Tacubaya",
+            "latitude": 19.4033,
+            "longitude": -99.1871
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Hospital Ángeles",
+            "latitude": 19.4356,
+            "longitude": -99.2041
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Teatro Metropólitan",
+            "latitude": 19.4332,
+            "longitude": -99.1457
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Zona Arqueológica Teotihuacán",
+            "latitude": 19.6927,
+            "longitude": -98.8438
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque La Mexicana",
+            "latitude": 19.3588,
+            "longitude": -99.2701
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Museo Frida Kahlo",
+            "latitude": 19.3551,
+            "longitude": -99.1627
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Plaza Universidad",
+            "latitude": 19.3636,
+            "longitude": -99.1750
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estación de Tren Suburbano",
+            "latitude": 19.4902,
+            "longitude": -99.1956
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque Ecológico Xochimilco",
+            "latitude": 19.2751,
+            "longitude": -99.1407
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Centro Comercial Santa Fe",
+            "latitude": 19.3648,
+            "longitude": -99.2616
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Mercado de Coyoacán",
+            "latitude": 19.3490,
+            "longitude": -99.1613
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estadio Ciudad de los Deportes",
+            "latitude": 19.3832,
+            "longitude": -99.1785
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Plaza Antara",
+            "latitude": 19.4387,
+            "longitude": -99.2023
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque Delta",
+            "latitude": 19.4050,
+            "longitude": -99.1546
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Biblioteca Vasconcelos",
+            "latitude": 19.4559,
+            "longitude": -99.1506
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Museo Soumaya",
+            "latitude": 19.4408,
+            "longitude": -99.2047
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estación Metro Balderas",
+            "latitude": 19.4272,
+            "longitude": -99.1490
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque Lincoln",
+            "latitude": 19.4300,
+            "longitude": -99.1967
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Centro Comercial Reforma 222",
+            "latitude": 19.4260,
+            "longitude": -99.1712
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Hospital Médica Sur",
+            "latitude": 19.2945,
+            "longitude": -99.1367
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Teatro Insurgentes",
+            "latitude": 19.3634,
+            "longitude": -99.1697
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque San Simón",
+            "latitude": 19.3938,
+            "longitude": -99.1478
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Mercado Jamaica",
+            "latitude": 19.4086,
+            "longitude": -99.1217
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Plaza Carso",
+            "latitude": 19.4413,
+            "longitude": -99.2030
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estación Metro Observatorio",
+            "latitude": 19.3982,
+            "longitude": -99.2004
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque La Viga",
+            "latitude": 19.4055,
+            "longitude": -99.1152
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Museo del Templo Mayor",
+            "latitude": 19.4350,
+            "longitude": -99.1315
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Centro Comercial Mundo E",
+            "latitude": 19.4985,
+            "longitude": -99.2347
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque Tezozómoc",
+            "latitude": 19.5030,
+            "longitude": -99.2067
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estadio Azul",
+            "latitude": 19.3832,
+            "longitude": -99.1785
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Plaza Lindavista",
+            "latitude": 19.4878,
+            "longitude": -99.1352
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Mercado de San Ángel",
+            "latitude": 19.3467,
+            "longitude": -99.1903
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque de los Venados",
+            "latitude": 19.3747,
+            "longitude": -99.1578
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Estación Metro Pino Suárez",
+            "latitude": 19.4259,
+            "longitude": -99.1328
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Museo Nacional de Antropología",
+            "latitude": 19.4260,
+            "longitude": -99.1862
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Plaza Comercial Coyoacán",
+            "latitude": 19.3462,
+            "longitude": -99.1635
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Parque de la Amistad",
+            "latitude": 19.4135,
+            "longitude": -99.1450
+        }
+    },
+    {
+        "model": "ToiFinder.Location",
+        "fields": {
+            "name": "Centro Comercial Parque Toreo",
+            "latitude": 19.4590,
+            "longitude": -99.2198
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Plaza Sol",
+            "location": 1,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Terminal Norte",
+            "location": 2,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque Alameda",
+            "location": 3,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Centro Comercial Estrella",
+            "location": 4,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Universidad Metropolitana",
+            "location": 5,
+            "has_accessibility": false,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Museo Cultural",
+            "location": 6,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estación Metro Centro",
+            "location": 7,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Biblioteca Pública",
+            "location": 8,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Hospital San José",
+            "location": 9,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estadio Azteca",
+            "location": 10,
+            "has_accessibility": true,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Zoológico Chapultepec",
+            "location": 11,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Teatro Bellas Artes",
+            "location": 12,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Aeropuerto Benito Juárez",
+            "location": 13,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Mercado La Merced",
+            "location": 14,
+            "has_accessibility": false,
+            "is_free": true,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estación de Tren Buenavista",
+            "location": 15,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Catedral Metropolitana",
+            "location": 16,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Campus Politécnico",
+            "location": 17,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Centro de Convenciones Siglo XXI",
+            "location": 18,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque Tecnológico IT",
+            "location": 19,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Colonia Condesa",
+            "location": 20,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Centro Histórico Zócalo",
+            "location": 21,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Bosque de Tlalpan",
+            "location": 22,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Zona Hotelera Polanco",
+            "location": 23,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Laguna de Tequesquitengo",
+            "location": 24,
+            "has_accessibility": false,
+            "is_free": true,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Torre Reforma",
+            "location": 25,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Zona Industrial Naucalpan",
+            "location": 26,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Puerto de Veracruz",
+            "location": 27,
+            "has_accessibility": false,
+            "is_free": true,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Mirador Coyoacán",
+            "location": 28,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Museo de Arte Moderno",
+            "location": 29,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Jardín Botánico UNAM",
+            "location": 30,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Plaza Garibaldi",
+            "location": 31,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Mercado Sonora",
+            "location": 32,
+            "has_accessibility": false,
+            "is_free": true,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque México",
+            "location": 33,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Centro Comercial Perisur",
+            "location": 34,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estadio Olímpico Universitario",
+            "location": 35,
+            "has_accessibility": true,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Plaza Satélite",
+            "location": 36,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque Hundido",
+            "location": 37,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estación Metro Tacubaya",
+            "location": 38,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Hospital Ángeles",
+            "location": 39,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Teatro Metropólitan",
+            "location": 40,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Zona Arqueológica Teotihuacán",
+            "location": 41,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque La Mexicana",
+            "location": 42,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Museo Frida Kahlo",
+            "location": 43,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Plaza Universidad",
+            "location": 44,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estación de Tren Suburbano",
+            "location": 45,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque Ecológico Xochimilco",
+            "location": 46,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Centro Comercial Santa Fe",
+            "location": 47,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Mercado de Coyoacán",
+            "location": 48,
+            "has_accessibility": false,
+            "is_free": true,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estadio Ciudad de los Deportes",
+            "location": 49,
+            "has_accessibility": true,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Plaza Antara",
+            "location": 50,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque Delta",
+            "location": 51,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Biblioteca Vasconcelos",
+            "location": 52,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Museo Soumaya",
+            "location": 53,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estación Metro Balderas",
+            "location": 54,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque Lincoln",
+            "location": 55,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Centro Comercial Reforma 222",
+            "location": 56,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Hospital Médica Sur",
+            "location": 57,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Teatro Insurgentes",
+            "location": 58,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque San Simón",
+            "location": 59,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Mercado Jamaica",
+            "location": 60,
+            "has_accessibility": false,
+            "is_free": true,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Plaza Carso",
+            "location": 61,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estación Metro Observatorio",
+            "location": 62,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque La Viga",
+            "location": 63,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Museo del Templo Mayor",
+            "location": 64,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Centro Comercial Mundo E",
+            "location": 65,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque Tezozómoc",
+            "location": 66,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estadio Azul",
+            "location": 67,
+            "has_accessibility": true,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Plaza Lindavista",
+            "location": 68,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Mercado de San Ángel",
+            "location": 69,
+            "has_accessibility": false,
+            "is_free": true,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque de los Venados",
+            "location": 70,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Estación Metro Pino Suárez",
+            "location": 71,
+            "has_accessibility": false,
+            "is_free": false,
+            "is_clean": false
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Museo Nacional de Antropología",
+            "location": 72,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Plaza Comercial Coyoacán",
+            "location": 73,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Parque de la Amistad",
+            "location": 74,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Bathroom",
+        "fields": {
+            "name": "Baño en Centro Comercial Parque Toreo",
+            "location": 75,
+            "has_accessibility": true,
+            "is_free": true,
+            "is_clean": true
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 1,
+            "rating": 4,
+            "comment": "El baño está muy limpio y bien iluminado, con rampas para accesibilidad. Solo faltó jabón en uno de los dispensadores."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 1,
+            "rating": 5,
+            "comment": "Excelente baño, todo en orden y muy cómodo para personas con discapacidad."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 2,
+            "rating": 2,
+            "comment": "El baño estaba sucio y había que pagar para entrar. No tiene rampas, lo cual es un problema."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 3,
+            "rating": 5,
+            "comment": "Baño impecable, gratuito y con acceso para sillas de ruedas. Muy bien mantenido."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 3,
+            "rating": 4,
+            "comment": "Buen baño, limpio y accesible. La presión del agua podría mejorar."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 4,
+            "rating": 5,
+            "comment": "Baño de centro comercial muy bien cuidado, con todas las facilidades para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 4,
+            "rating": 4,
+            "comment": "Muy limpio y gratuito, pero a veces está muy concurrido."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 5,
+            "rating": 3,
+            "comment": "El baño es gratuito y limpio, pero no tiene acceso para personas con discapacidad."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 6,
+            "rating": 5,
+            "comment": "Baño muy limpio y accesible, ideal para visitantes del museo."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 7,
+            "rating": 2,
+            "comment": "Cobran por entrar y no estaba muy limpio. No hay rampas para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 8,
+            "rating": 5,
+            "comment": "Baño excelente, limpio y con acceso para todos. Muy bien mantenido."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 9,
+            "rating": 5,
+            "comment": "Baño del hospital impecable, con todas las facilidades para personas con discapacidad."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 9,
+            "rating": 4,
+            "comment": "Muy limpio y accesible, pero a veces falta jabón."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 10,
+            "rating": 3,
+            "comment": "El baño está bien, pero cobran y no siempre está limpio durante los partidos."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 11,
+            "rating": 5,
+            "comment": "Baño muy limpio y accesible, perfecto para familias en el zoológico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 11,
+            "rating": 4,
+            "comment": "Buen baño, limpio y gratuito, pero puede estar concurrido los fines de semana."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 12,
+            "rating": 5,
+            "comment": "Baño impecable y con acceso para discapacitados, ideal para el teatro."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 13,
+            "rating": 5,
+            "comment": "Baños del aeropuerto muy limpios y accesibles, con buen mantenimiento."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 13,
+            "rating": 4,
+            "comment": "Baño limpio y gratuito, pero a veces hay fila en horas pico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 14,
+            "rating": 2,
+            "comment": "El baño del mercado no está limpio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 15,
+            "rating": 5,
+            "comment": "Baño de la estación muy limpio, gratuito y con rampas para accesibilidad."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 16,
+            "rating": 3,
+            "comment": "El baño está limpio, pero cobran y no hay acceso para personas con discapacidad."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 17,
+            "rating": 5,
+            "comment": "Baño universitario muy limpio y accesible, excelente mantenimiento."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 18,
+            "rating": 5,
+            "comment": "Baño del centro de convenciones en perfectas condiciones, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 19,
+            "rating": 2,
+            "comment": "Baño sucio y sin accesibilidad, además cobran por usarlo."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 20,
+            "rating": 5,
+            "comment": "Baño muy limpio y con acceso para discapacitados, ideal para la zona."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 20,
+            "rating": 4,
+            "comment": "Limpio y gratuito, pero a veces falta papel higiénico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 21,
+            "rating": 2,
+            "comment": "Baño sucio y cobran por entrar, no hay acceso para sillas de ruedas."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 22,
+            "rating": 5,
+            "comment": "Baño impecable y accesible, perfecto para visitantes del parque."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 22,
+            "rating": 4,
+            "comment": "Muy limpio y gratuito, pero los fines de semana puede estar lleno."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 23,
+            "rating": 5,
+            "comment": "Baño en Polanco muy bien cuidado, con acceso para discapacitados y gratuito."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 24,
+            "rating": 3,
+            "comment": "El baño del centro comercial necesita más mantenimiento."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 25,
+            "rating": 4,
+            "comment": "Baño en el parque muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 26,
+            "rating": 2,
+            "comment": "El baño en la playa estaba sucio y no tenía acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 27,
+            "rating": 5,
+            "comment": "Baño en el centro comercial muy limpio y accesible, excelente servicio."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 28,
+            "rating": 4,
+            "comment": "Buen baño, limpio y gratuito, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 29,
+            "rating": 3,
+            "comment": "El baño del museo es bueno, pero a veces falta papel higiénico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 30,
+            "rating": 5,
+            "comment": "Baño en el jardín botánico muy limpio y accesible, excelente mantenimiento."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 31,
+            "rating": 2,
+            "comment": "El baño en Plaza Garibaldi estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 32,
+            "rating": 3,
+            "comment": "El baño en el mercado Sonora es gratuito, pero no está muy limpio."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 33,
+            "rating": 5,
+            "comment": "Baño en Parque México excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 34,
+            "rating": 4,
+            "comment": "Baño en Perisur muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 35,
+            "rating": 2,
+            "comment": "El baño en el Estadio Olímpico Universitario estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 36,
+            "rating": 5,
+            "comment": "Baño en Plaza Satélite muy limpio y accesible, excelente servicio."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 37,
+            "rating": 4,
+            "comment": "Baño en Parque Hundido muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 38,
+            "rating": 5,
+            "comment": "Baño en el zoológico muy limpio y accesible, excelente mantenimiento."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 39,
+            "rating": 3,
+            "comment": "El baño en el hospital Ángeles es bueno, pero a veces falta papel higiénico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 40,
+            "rating": 5,
+            "comment": "Baño en el teatro Metropólitan excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 41,
+            "rating": 2,
+            "comment": "El baño en Teotihuacán estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 42,
+            "rating": 4,
+            "comment": "Baño en Parque La Mexicana muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 43,
+            "rating": 5,
+            "comment": "Baño en el Museo Frida Kahlo excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 44,
+            "rating": 4,
+            "comment": "Baño en Plaza Universidad muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 45,
+            "rating": 5,
+            "comment": "Baño en la estación de tren suburbano muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 46,
+            "rating": 3,
+            "comment": "El baño en el parque ecológico Xochimilco es bueno, pero a veces falta papel higiénico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 47,
+            "rating": 5,
+            "comment": "Baño en el centro comercial Santa Fe excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 48,
+            "rating": 2,
+            "comment": "El baño en el mercado de Coyoacán estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 49,
+            "rating": 4,
+            "comment": "Baño en el estadio Ciudad de los Deportes muy limpio y accesible, pero cobran por usarlo."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 50,
+            "rating": 5,
+            "comment": "Baño en Plaza Antara excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 51,
+            "rating": 4,
+            "comment": "Baño en Parque Delta muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 52,
+            "rating": 5,
+            "comment": "Baño en la Biblioteca Vasconcelos excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 53,
+            "rating": 4,
+            "comment": "Baño en el Museo Soumaya muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 54,
+            "rating": 2,
+            "comment": "El baño en la estación Metro Balderas estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 55,
+            "rating": 5,
+            "comment": "Baño en Parque Lincoln excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 56,
+            "rating": 4,
+            "comment": "Baño en el parque de Chapultepec muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 57,
+            "rating": 5,
+            "comment": "Baño en el Hospital Médica Sur excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 58,
+            "rating": 4,
+            "comment": "Baño en el Teatro Insurgentes muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 59,
+            "rating": 5,
+            "comment": "Baño en Parque San Simón excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 60,
+            "rating": 3,
+            "comment": "El baño en el Mercado Jamaica es gratuito, pero no está muy limpio."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 61,
+            "rating": 5,
+            "comment": "Baño en Plaza Carso excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 62,
+            "rating": 2,
+            "comment": "El baño en la Estación Metro Observatorio estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 63,
+            "rating": 5,
+            "comment": "Baño en Parque La Viga excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 64,
+            "rating": 4,
+            "comment": "Baño en el Museo del Templo Mayor muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 65,
+            "rating": 5,
+            "comment": "Baño en el Centro Comercial Mundo E excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 66,
+            "rating": 4,
+            "comment": "Baño en Parque Tezozómoc muy limpio y accesible, pero a veces hay mucha gente."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 67,
+            "rating": 2,
+            "comment": "El baño en el Estadio Azul estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 68,
+            "rating": 5,
+            "comment": "Baño en Plaza Lindavista excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 69,
+            "rating": 3,
+            "comment": "El baño en el Mercado de San Ángel es gratuito, pero no está muy limpio."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 70,
+            "rating": 4,
+            "comment": "Baño en el Parque de los Venados muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 71,
+            "rating": 2,
+            "comment": "El baño en la Estación Metro Pino Suárez estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 72,
+            "rating": 5,
+            "comment": "Baño en el Museo Nacional de Antropología excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 73,
+            "rating": 4,
+            "comment": null
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 74,
+            "rating": 5,
+            "comment": "Baño en el Parque de la Amistad excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 1,
+            "rating": 4,
+            "comment": "Baño en el Centro Comercial Parque Toreo muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 2,
+            "rating": 5,
+            "comment": "Baño en el Centro Comercial Parque Toreo excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 3,
+            "rating": 3,
+            "comment": "El baño en el Parque de la Amistad es bueno, pero a veces falta papel higiénico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 4,
+            "rating": 4,
+            "comment": "Baño en el Centro Comercial Parque Toreo muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 5,
+            "rating": 2,
+            "comment": "El baño en el Parque de la Amistad estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 6,
+            "rating": 5,
+            "comment": "Baño en el Centro Comercial Parque Toreo excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 7,
+            "rating": 4,
+            "comment": "Baño en el Parque de la Amistad muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 8,
+            "rating": 5,
+            "comment": "Baño en el Centro Comercial Parque Toreo excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 9,
+            "rating": 3,
+            "comment": "El baño en el Parque de la Amistad es bueno, pero a veces falta papel higiénico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 10,
+            "rating": 4,
+            "comment": "Baño en el Centro Comercial Parque Toreo muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 11,
+            "rating": 2,
+            "comment": "El baño en el Parque de la Amistad estaba sucio y no tiene acceso para discapacitados."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 12,
+            "rating": 5,
+            "comment": "Baño en el Centro Comercial Parque Toreo excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 13,
+            "rating": 4,
+            "comment": "Baño en el Parque de la Amistad muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 14,
+            "rating": 5,
+            "comment": "Baño en el Centro Comercial Parque Toreo excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 15,
+            "rating": 4,
+            "comment": "Baño en el Parque de la Amistad muy limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 16,
+            "rating": 5,
+            "comment": "Baño en el Centro Comercial Parque Toreo excelente, limpio y accesible."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 17,
+            "rating": 3,
+            "comment": "El baño en el Parque de la Amistad es bueno, pero a veces falta papel higiénico."
+        }
+    },
+    {
+        "model": "ToiFinder.Review",
+        "fields": {
+            "bathroom": 18,
+            "rating": 4,
+            "comment": "Baño en el Centro Comercial Parque Toreo muy limpio y accesible."
+        }
+    }
+]
