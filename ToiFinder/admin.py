@@ -16,7 +16,7 @@ class BathroomAdmin(admin.ModelAdmin):
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ('bathroom', 'rating', 'created_at')
     search_fields = ('bathroom__name', 'comment')
-    list_filter = ('rating', 'created_at')
+    list_filter = ('rating', 'created_at', 'bathroom')
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ('name', 'latitude', 'longitude', 'created_at')
