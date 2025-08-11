@@ -4,10 +4,11 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.views import View
+from django.db.models import Avg, Count
+from django.conf import settings
 
 import chromadb
 from sentence_transformers import SentenceTransformer
-from django.conf import settings
 from ToiFinder.models import Bathroom
 
 from .models import User, Location, Bathroom, Review
@@ -70,3 +71,34 @@ def chat_query(request):
         return render(request, 'ToiFinder/chat.html')
 
     return JsonResponse({'error': 'Método no permitido'}, status=405)
+
+class CatalogView(View):
+    @method_decorator(csrf_exempt)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+    
+    def get(self, request):
+        """
+        Vista para mostrar el catálogo de baños con información básica
+        """
+        bathrooms = Bathroom.objects.select_related('location').annotate(
+            average_rating=Avg('reviews__rating'),
+            review_count=Count('reviews')
+        ).all()
+        
+        # Procesar los datos para el template
+        for bathroom in bathrooms:
+            # Si no tiene reseñas, asignar rating 0
+            if bathroom.average_rating is None:
+                bathroom.average_rating = 0
+            
+            # Redondear el rating para mostrar estrellas
+            bathroom.stars_full = int(bathroom.average_rating)
+            bathroom.stars_empty = 5 - bathroom.stars_full
+        
+        context = {
+            'bathrooms': bathrooms,
+            'total_bathrooms': bathrooms.count(),
+        }
+        
+        return render(request, 'toifinder/catalog.html', context)
