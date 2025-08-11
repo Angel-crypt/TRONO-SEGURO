@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Baños - ToiFinder</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'ToiFinder/css/catalog.css' %}">
+    <link rel="stylesheet" href="{% static 'ToiFinder/css/styles.css' %}">
 </head>
 
 <body>
@@ -128,11 +128,6 @@
                                 {% if bathroom.review_count == 1 %}reseña{% else %}reseñas{% endif %})
                             </span>
                         </div>
-                    </div>
-
-                    <div class="card-coordinates">
-                        <i class="fas fa-crosshairs"></i>
-                        {{ bathroom.location.latitude|floatformat:4 }}, {{ bathroom.location.longitude|floatformat:4 }}
                     </div>
 
                     <div class="card-features">
