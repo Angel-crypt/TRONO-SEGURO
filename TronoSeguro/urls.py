@@ -25,5 +25,5 @@ urlpatterns = [
     path("login", LoginView.as_view(), name="login"),
     path("chat/", chat_query, name="chat_query"),
     path('catalog', CatalogView.as_view(), name='catalog'),
-    path('bathroom/<int:bathroom_id>/', DetailView.as_view(), name='bathroom_detail'),
+    path('detail/<int:bathroom_id>/', DetailView.as_view(), name='detail'),
 ]
