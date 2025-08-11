@@ -98,3 +98,26 @@ class CatalogView(View):
         }
         
         return render(request, 'toifinder/catalog.html', context)
+
+class DetailView(View):
+    @method_decorator(csrf_exempt)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def get(self, request, bathroom_id):
+        """
+        Vista para mostrar los detalles de un baño específico
+        """
+        bathroom = Bathroom.objects.filter(id=bathroom_id).annotate(
+            average_rating=Avg('reviews__rating'),
+            review_count=Count('reviews')
+        ).first()
+
+        if not bathroom:
+            return HttpResponseBadRequest("Baño no encontrado")
+
+        context = {
+            'bathroom': bathroom
+        }
+
+        return render(request, 'toifinder/detail.html', context)
