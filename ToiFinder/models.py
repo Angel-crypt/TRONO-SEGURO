@@ -57,6 +57,7 @@ class Bathroom(models.Model):
 class Review(models.Model):
     id = models.AutoField(primary_key=True)
     bathroom = models.ForeignKey(Bathroom, on_delete=models.CASCADE, related_name='reviews')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews', default=1)
     rating = models.IntegerField()
     comment = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now, null=True, blank=True)
