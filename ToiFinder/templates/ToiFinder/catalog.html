@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Baños - ToiFinder</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -24,23 +23,67 @@
             <p>Encuentra baños limpios, accesibles y bien valorados cerca de ti</p>
         </div>
 
-        <!-- Bathroom Grid -->
         <div>
             {% for bathroom in bathrooms %}
             <div>
-                <h3>{{ bathroom.name }}</h3>
-                <p>Ubicación: {{ bathroom.location.name }}</p>
-                <p>Calificación: {{ bathroom.average_rating|floatformat:1 }} ({{ bathroom.review_count }} reseñas)</p>
-                <p>Precio: {% if bathroom.is_free %}Gratuito{% else %}De pago{% endif %}</p>
-                <p>Accesibilidad: {% if bathroom.has_accessibility %}Sí{% else %}No{% endif %}</p>
+                <div>
+                    <h3>
+                        {{ bathroom.name }}
+                    </h3>
+
+                    <div>
+                        <span>{{ bathroom.location.name }}</span>
+                    </div>
+
+                    <div>
+                        <span>
+                            {{ bathroom.location.latitude|floatformat:4 }},
+                            {{ bathroom.location.longitude|floatformat:4 }}
+                        </span>
+                    </div>
+
+                    <div>
+                        <div>
+                            <span>
+                                {{ bathroom.average_rating }} ({{ bathroom.review_count }} reseñas)
+                            </span>
+                        </div>
+                    </div>
+
+                    <div>
+                        {% if bathroom.is_free %}
+                        <span>
+                            Gratuito
+                        </span>
+                        {% else %}
+                        <span>
+                            De pago
+                        </span>
+                        {% endif %}
+
+                        {% if bathroom.has_accessibility %}
+                        <span>
+                            Accesible
+                        </span>
+                        {% endif %}
+
+                        {% if bathroom.is_clean %}
+                        <span>
+                            Limpio
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div>
+                <i></i>
+                <h3>No se encontraron baños</h3>
+                <p>Prueba con diferentes filtros o ubicación</p>
             </div>
             {% endfor %}
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2023 ToiFinder. Todos los derechos reservados.</p>
-    </footer>
 </body>
 
 </html>

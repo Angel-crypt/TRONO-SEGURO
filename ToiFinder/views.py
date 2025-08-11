@@ -91,10 +91,6 @@ class CatalogView(View):
             # Si no tiene reseñas, asignar rating 0
             if bathroom.average_rating is None:
                 bathroom.average_rating = 0
-            
-            # Redondear el rating para mostrar estrellas
-            bathroom.stars_full = int(bathroom.average_rating)
-            bathroom.stars_empty = 5 - bathroom.stars_full
         
         context = {
             'bathrooms': bathrooms,
