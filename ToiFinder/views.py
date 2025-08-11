@@ -13,33 +13,35 @@ from ToiFinder.models import Bathroom
 from .models import User, Location, Bathroom, Review
 
 # Create your views here.
-class UserView(View):
-    @method_decorator(csrf_exempt, name='dispatch')
-    def get(self, request):
-        usuarios = User.objects.all().values()
-        return JsonResponse(list(usuarios), safe=False)
-    
-    def post(self, request):
-        try:
-            data = json.loads(request.body)
-            user = User.objects.create(
-                username=data['username'],
-                email=data['email'],
-                password=data['password']
-            )
-            return JsonResponse({
-                "message": "Usuario creado correctamente",
-                "status": "success",
-                "user_id": user.id
-            })
-        except:
-            return HttpResponseBadRequest({"error":"Nel carnal, no se pudo crear el usuario"})
 
 class PaginaView(View):
     def get(self, request):
         baños = Bathroom.objects.all().values()
         return render(request, 'ToiFinder/index.html', {'baños': baños})
 
+class LoginView(View):
+    @method_decorator(csrf_exempt)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+    
+    def get(self, request):
+        return render(request, 'ToiFinder/login.html')
+    
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            user = User.objects.get(username=data['username'], password=data['password'])
+            return JsonResponse({
+                "message": "Login exitoso",
+                "status": "success",
+                "user_id": user.id
+            })
+        except User.DoesNotExist:
+            return JsonResponse({"error": "Credenciales inválidas"}, status=400)
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Formato de datos inválido"}, status=400)
+        except KeyError:
+            return JsonResponse({"error": "Faltan campos requeridos (username, password)"}, status=400)
 
 @csrf_exempt
 def chat_query(request):
