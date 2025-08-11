@@ -1,20 +1,16 @@
-<div id="chat-box"></div>
-<input type="text" id="query" placeholder="Pregunta sobre baños...">
-<button onclick="sendQuery()">Enviar</button>
+{% load static %}
 
-<script>
-    function sendQuery() {
-        const query = document.getElementById('query').value;
-        fetch('/chat/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `query=${query}`
-        })
-            .then(response => response.json())
-            .then(data => {
-                const chatBox = document.getElementById('chat-box');
-                chatBox.innerHTML += `<p><strong>Tú:</strong> ${query}</p>`;
-                chatBox.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
-            });
-    }
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Trono Seguro</title>
+</head>
+<body>
+    <div id="chat-box"></div>
+    <input type="text" id="query" placeholder="Pregunta sobre baños...">
+    <button onclick="sendQuery()">Enviar</button>
+</body>
+    <script src="{% static 'ToiFinder/js/chat.js' %}"></script>
+</html>
