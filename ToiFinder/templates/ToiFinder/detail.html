@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Baños - ToiFinder</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div>
+            <div>
+                <h1>ToiFinder</h1>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        <div>
+            <h2>Detalles de Baños</h2>
+        </div>
+
+        <div>
+            <h3>{{ bathroom.name }}</h3>
+            <p>Ubicación: {{ bathroom.location.name }}</p>
+            <p>Coordenadas: {{ bathroom.location.latitude|floatformat:4 }}, {{ bathroom.location.longitude|floatformat:4 }}</p>
+            <p>Calificación promedio: {{ bathroom.average_rating|floatformat:3 }} ({{ bathroom.review_count }} reseñas)</p>
+            <p>
+                {% if bathroom.is_free %}
+                Gratuito
+                {% else %}
+                De pago
+                {% endif %}
+            </p>
+            <p>
+                {% if bathroom.has_accessibility %}
+                Accesible
+                {% endif %}
+            </p>
+            <p>
+                {% if bathroom.is_clean %}
+                Limpio
+                {% endif %}
+            </p>
+        </div>
+
+        <div>   
+            <h4>Comentarios</h4>
+            <ul>
+                {% for review in bathroom.reviews.all %}
+                <li>
+                    {{ review.comment }} ({{ review.rating }})
+                </li>
+                {% empty %}
+                <li>No hay comentarios disponibles.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
