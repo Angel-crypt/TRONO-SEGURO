@@ -1,9 +1,30 @@
+function getCsrfToken() {
+    const name = 'csrftoken';
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     // Cache DOM elements
     const cards = document.querySelectorAll('.bathroom-card');
     const filterForm = document.getElementById('filterForm');
     const submitBtn = filterForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerHTML;
+    const addBathroomBtn = document.getElementById('add-bathroom');
+    const addBathroomEmptyBtn = document.getElementById('add-bathroom-empty-btn');
+    const modal = document.getElementById('add-bathroom-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const addBathroomForm = document.getElementById('add-bathroom-form');
 
     // Optimized card animations
     const observerOptions = {
@@ -86,6 +107,77 @@ document.addEventListener('DOMContentLoaded', function () {
             if (activeElement.tagName === 'INPUT' || activeElement.tagName === 'SELECT') {
                 activeElement.blur();
             }
+        }
+    });
+
+    // Modal handling
+    function openModal() {
+        console.log("Opening modal");
+        modal.style.display = 'block';
+    }
+
+    function closeModalFunc() {
+        console.log("Closing modal");
+        modal.style.display = 'none';
+        addBathroomForm.reset();
+    }
+
+    addBathroomBtn.addEventListener('click', openModal);
+    console.log("Add Bathroom button clicked");
+    if (addBathroomEmptyBtn) {
+        addBathroomEmptyBtn.addEventListener('click', openModal);
+    }
+    closeModal.addEventListener('click', closeModalFunc);
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            closeModalFunc();
+        }
+    });
+
+    // Handle form submission
+    addBathroomForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const submitButton = addBathroomForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Guardando...';
+        submitButton.disabled = true;
+
+        const formData = new FormData(addBathroomForm);
+        const data = {
+            name: formData.get('name'),
+            location_name: formData.get('location_name'),
+            latitude: parseFloat(formData.get('latitude')),
+            longitude: parseFloat(formData.get('longitude')),
+            is_free: formData.get('is_free') === 'on',
+            has_accessibility: formData.get('has_accessibility') === 'on',
+            is_clean: formData.get('is_clean') === 'on'
+        };
+
+        try {
+            const response = await fetch('/catalog/add_bathroom/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCsrfToken()
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert('Baño agregado exitosamente');
+                closeModalFunc();
+                window.location.reload(); // Refresh to show new bathroom
+            } else {
+                alert('Error al agregar el baño: ' + result.error);
+            }
+        } catch (error) {
+            alert('Error al conectar con el servidor');
+        } finally {
+            submitButton.innerHTML = originalButtonText;
+            submitButton.disabled = false;
         }
     });
 });

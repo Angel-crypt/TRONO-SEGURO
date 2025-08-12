@@ -20,9 +20,8 @@
                 <a href="/profile" class="btn btn-secondary" id="profileBtn">
                     <i class="fas fa-user"></i> <span id="usernameDisplay">Mi Perfil</span>
                 </a>
-                <a href="#" class="btn btn-primary" id="createBtn">
-                    <i class="fas fa-plus"></i> Agregar Baño
-                </a>
+
+                <a href="#" id="add-bathroom" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Baño</a>
             </div>
         </div>
     </header>
@@ -186,12 +185,6 @@
                         {% endif %}
                     </div>
 
-                    {% if bathroom.description %}
-                    <div class="card-description">
-                        <p><i class="fas fa-info-circle"></i> {{ bathroom.description|truncatechars:100 }}</p>
-                    </div>
-                    {% endif %}
-
                     <div class="card-actions">
                         <a href="{% url 'detail' bathroom.id %}" class="btn-card btn-view">
                             <i class="fas fa-eye"></i> Ver detalles
@@ -262,6 +255,41 @@
                     </span>
             </nav>
             {% endif %}
+
+            <div id="add-bathroom-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Agregar Nuevo Baño</h2>
+                    <form id="add-bathroom-form">
+                        <div class="form-group">
+                            <label for="bathroom-name">Nombre del Baño</label>
+                            <input type="text" id="bathroom-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location-name">Ubicación</label>
+                            <input type="text" id="location-name" name="location_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="latitude">Latitud</label>
+                            <input type="number" step="any" id="latitude" name="latitude" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="longitude">Longitud</label>
+                            <input type="number" step="any" id="longitude" name="longitude" required>
+                        </div>
+                        <div class="form-group">
+                            <label><input type="checkbox" name="is_free" checked> Gratuito</label>
+                        </div>
+                        <div class="form-group">
+                            <label><input type="checkbox" name="has_accessibility"> Accesible</label>
+                        </div>
+                        <div class="form-group">
+                            <label><input type="checkbox" name="is_clean" checked> Limpio</label>
+                        </div>
+                        <button type="submit">Guardar Baño</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
