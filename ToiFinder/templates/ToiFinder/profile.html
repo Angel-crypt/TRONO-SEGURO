@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - ToiFinder</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    {% csrf_token %}
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'catalog' %}">
+                <i class="fas fa-toilet"></i> ToiFinder
+            </a>
+
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{% url 'catalog' %}">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a class="nav-link active" href="{% url 'profile' %}">
+                    <i class="fas fa-user"></i> Mi Cuenta
+                </a>
+                <a class="nav-link" href="#" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Header del perfil -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center">
+                                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                                    style="width: 80px; height: 80px;">
+                                    <i class="fas fa-user fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="mb-1">{{ user.get_full_name|default:user.username }}</h3>
+                                <p class="text-muted mb-0">
+                                    <i class="fas fa-envelope"></i> {{ user.email }}
+                                </p>
+                                <p class="text-muted mb-0">
+                                    <i class="fas fa-calendar"></i> Miembro desde {{ user.date_joined|date:"F Y" }}
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-outline-primary" onclick="editProfile()">
+                                    <i class="fas fa-edit"></i> Editar Perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card bg-primary text-white">
+                    <div class="card-body text-center">
+                        <i class="fas fa-star fa-2x mb-2"></i>
+                        <h4>{{ total_reviews }}</h4>
+                        <p class="mb-0">Reseñas Totales</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-success text-white">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-2x mb-2"></i>
+                        <h4>{{ avg_rating }}</h4>
+                        <p class="mb-0">Calificación Promedio</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-info text-white">
+                    <div class="card-body text-center">
+                        <i class="fas fa-trophy fa-2x mb-2"></i>
+                        <h4>
+                            {% if total_reviews >= 10 %}
+                            Experto
+                            {% elif total_reviews >= 5 %}
+                            Intermedio
+                            {% else %}
+                            Novato
+                            {% endif %}
+                        </h4>
+                        <p class="mb-0">Nivel de Usuario</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de reseñas -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <i class="fas fa-list"></i> Mis Reseñas
+                        </h5>
+                        <a href="{% url 'catalog' %}" class="btn btn-primary btn-sm">
+                            <i class="fas fa-plus"></i> Nueva Reseña
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        {% if reviews %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Baño</th>
+                                        <th>Calificación</th>
+                                        <th>Comentario</th>
+                                        <th>Fecha</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for review in reviews %}
+                                    <tr>
+                                        <td>
+                                            <strong>{{ review.bathroom.name }}</strong><br>
+                                            <small class="text-muted">{{ review.bathroom.location }}</small>
+                                        </td>
+                                        <td>
+                                            <div class="text-warning">
+                                                {% for i in "12345"|slice:":"|slice:review.rating %}
+                                                <i class="fas fa-star"></i>
+                                                {% endfor %}
+                                                {% for i in "12345"|slice:review.rating %}
+                                                <i class="far fa-star"></i>
+                                                {% endfor %}
+                                            </div>
+                                            <small>{{ review.rating }}/5</small>
+                                        </td>
+                                        <td>
+                                            <p class="mb-0">{{ review.comment|truncatechars:100 }}</p>
+                                        </td>
+                                        <td>
+                                            <small>{{ review.created_at|date:"d/m/Y H:i" }}</small>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        {% else %}
+                        <div class="text-center py-5">
+                            <i class="fas fa-clipboard-list fa-3x text-muted mb-3"></i>
+                            <h5 class="text-muted">No has escrito ninguna reseña aún</h5>
+                            <p class="text-muted">¡Comienza explorando y compartiendo tu experiencia!</p>
+                            <a href="{% url 'catalog' %}" class="btn btn-primary">
+                                <i class="fas fa-search"></i> Explorar Baños
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para confirmación de eliminación -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que quieres eliminar esta reseña?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función para obtener el token CSRF
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        // Función para cerrar sesión
+        function logout() {
+            if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+                fetch('/logout', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': getCookie('csrftoken')
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            // Limpiar localStorage
+                            localStorage.removeItem('user_id');
+                            localStorage.removeItem('username');
+
+                            // Redirigir al login
+                            window.location.href = '/login';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        // Redirigir de todas formas
+                        window.location.href = '/login';
+                    });
+            }
+        }
+
+        // Función para editar perfil
+        function editProfile() {
+            alert('Funcionalidad de editar perfil próximamente');
+            // Aquí puedes implementar la lógica para editar el perfil
+        }
+
+        // Variable para almacenar el ID de la reseña a eliminar
+        let reviewToDelete = null;
+
+        // Función para eliminar reseña
+        function deleteReview(reviewId) {
+            reviewToDelete = reviewId;
+            const modal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            modal.show();
+        }
+
+        // Confirmar eliminación
+        document.getElementById('confirmDelete').addEventListener('click', function () {
+            if (reviewToDelete) {
+                fetch(`/review/${reviewToDelete}/delete`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRFToken': getCookie('csrftoken')
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            location.reload();
+                        } else {
+                            alert('Error al eliminar la reseña');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Error al eliminar la reseña');
+                    });
+
+                const modal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
+                modal.hide();
+            }
+        });
+
+        // Función para editar reseña
+        function editReview(reviewId) {
+            // Redirigir a una página de edición o abrir un modal
+            window.location.href = `/review/${reviewId}/edit`;
+        }
+
+        // Verificar estado de login al cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/check-login-status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status !== 'authenticated') {
+                        window.location.href = '/login';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error verificando login:', error);
+                    window.location.href = '/login';
+                });
+        });
+
+        // Sincronizar con localStorage si es necesario
+        window.addEventListener('storage', function (e) {
+            if (e.key === 'user_id' && !e.newValue) {
+                // Si se elimina user_id de localStorage, cerrar sesión
+                window.location.href = '/login';
+            }
+        });
+    </script>
+</body>
+
+</html>
