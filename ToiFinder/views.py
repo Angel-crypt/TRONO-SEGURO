@@ -16,12 +16,6 @@ from ToiFinder.models import Bathroom
 from .models import User, Location, Bathroom, Review
 
 # Create your views here.
-
-class PaginaView(View):
-    def get(self, request):
-        bathrooms = Bathroom.objects.all().select_related('location')
-        return render(request, 'ToiFinder/index.html', {'bathrooms': bathrooms})
-
 class LoginView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, *args, **kwargs):
@@ -60,15 +54,14 @@ def chat_query(request):
     if request.method == 'POST':
         try:
             query = request.POST.get('query', '').strip()
-            
             if not query:
                 return JsonResponse({'error': 'Query vacía'}, status=400)
-
+            
             # Carga ChromaDB y modelo
             client = chromadb.PersistentClient(path=str(settings.CHROMA_DB_PATH))
             collection = client.get_collection(name="bathrooms")
             model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
-
+            
             # Embed la query y busca top 3 resultados
             query_embedding = model.encode(query)
             results = collection.query(query_embeddings=[query_embedding], n_results=3)
@@ -87,12 +80,11 @@ def chat_query(request):
 
             if not response_text:
                 response_text = "No se encontraron baños que coincidan con tu búsqueda."
-
             return JsonResponse({'response': response_text})
             
         except Exception as e:
             return JsonResponse({'error': 'Error procesando la consulta'}, status=500)
-    
+
     elif request.method == 'GET':
         return render(request, 'ToiFinder/chat.html')
 
@@ -102,7 +94,7 @@ class CatalogView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
-   
+
     def get(self, request):
         # Obtener parámetros de filtrado
         search_query = request.GET.get('q', '').strip()
@@ -120,7 +112,7 @@ class CatalogView(View):
 
         # Contador total antes de filtros
         total_bathrooms = bathrooms.count()
-
+        
         # --- Aplicar filtros ---
         has_filters = False
 
@@ -219,7 +211,7 @@ class DetailView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
-
+    
     def get(self, request, bathroom_id):
         """
         Vista para mostrar los detalles de un baño específico

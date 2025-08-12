@@ -17,11 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from ToiFinder.views import PaginaView, chat_query, LoginView, CatalogView, DetailView
+from ToiFinder.views import chat_query, LoginView, CatalogView, DetailView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("home", PaginaView.as_view(), name="home"),
     path("login", LoginView.as_view(), name="login"),
     path("chat/", chat_query, name="chat_query"),
     path('catalog', CatalogView.as_view(), name='catalog'),
