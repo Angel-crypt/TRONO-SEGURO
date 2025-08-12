@@ -17,8 +17,8 @@
                 <i class="fas fa-toilet"></i> ToiFinder
             </div>
             <div class="header-actions">
-                <a href="#" class="btn btn-secondary">
-                    <i class="fas fa-user"></i> Mi Cuenta
+                <a href="/profile" class="btn btn-secondary" id="profileBtn">
+                    <i class="fas fa-user"></i> <span id="usernameDisplay">Mi Perfil</span>
                 </a>
                 <a href="#" class="btn btn-primary" id="createBtn">
                     <i class="fas fa-plus"></i> Agregar Baño
@@ -26,6 +26,28 @@
             </div>
         </div>
     </header>
+
+    <script>
+        (function () {
+            const userId = localStorage.getItem('user_id');
+            const username = localStorage.getItem('username');
+
+            const profileBtn = document.getElementById('profileBtn');
+            const loginBtn = document.getElementById('loginBtn');
+            const usernameDisplay = document.getElementById('usernameDisplay');
+
+            if (userId && username) {
+                // Usuario logueado
+                profileBtn.style.display = 'inline-block';
+                loginBtn.style.display = 'none';
+                usernameDisplay.textContent = username;
+            } else {
+                // Usuario no logueado
+                profileBtn.style.display = 'none';
+                loginBtn.style.display = 'inline-block';
+            }
+        })();
+    </script>
 
     <main>
         <section class="hero">

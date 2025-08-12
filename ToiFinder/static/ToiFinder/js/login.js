@@ -22,9 +22,16 @@ function login() {
         })
         .then(data => {
             if (data.status === 'success') {
-                successMessage.textContent = `¡Login exitoso!`;
+                // Guardar user_id y username en localStorage
+                localStorage.setItem('user_id', data.user_id);
+                localStorage.setItem('username', username);
+
+                successMessage.textContent = `¡Login exitoso! Bienvenido ${username}`;
                 successMessage.style.display = 'block';
-                window.location.href = '/home';
+
+                setTimeout(() => {
+                    window.location.href = '/catalog';
+                }, 1500);
             } else {
                 errorMessage.textContent = data.error || 'Credenciales inválidas';
                 errorMessage.style.display = 'block';

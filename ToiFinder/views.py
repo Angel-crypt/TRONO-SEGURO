@@ -235,3 +235,72 @@ class DetailView(View):
         }
 
         return render(request, 'toifinder/detail.html', context)
+
+class ProfileView(View):
+    @method_decorator(csrf_exempt)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+    
+    def get(self, request):
+        """
+        Vista para mostrar el perfil del usuario
+        """
+        return render(request, 'ToiFinder/profile.html')
+    
+    def post(self, request):
+        """
+        API para obtener estadísticas del usuario vía AJAX
+        """
+        try:
+            data = json.loads(request.body)
+            user_id = data.get('user_id')
+            
+            if not user_id:
+                return JsonResponse({"error": "user_id requerido"}, status=400)
+            
+            # Verificar que el usuario existe
+            try:
+                user = User.objects.get(id=user_id)
+            except User.DoesNotExist:
+                return JsonResponse({"error": "Usuario no encontrado"}, status=404)
+            
+            # Obtener estadísticas del usuario
+            user_reviews = Review.objects.filter(user_id=user_id)
+            
+            # Calcular average_rating manualmente para evitar errores
+            total_reviews = user_reviews.count()
+            avg_rating = 0
+            if total_reviews > 0:
+                total_rating = sum([review.rating for review in user_reviews])
+                avg_rating = total_rating / total_reviews
+            
+            stats = {
+                'username': user.username,
+                'email': user.email,
+                'member_since': user.created_at.strftime('%d/%m/%Y') if user.created_at else 'N/A',
+                'total_reviews': total_reviews,
+                'average_rating': round(avg_rating, 1),
+                'recent_reviews': []
+            }
+            
+            # Obtener las 5 reseñas más recientes con información del baño
+            recent_reviews = user_reviews.select_related('bathroom', 'bathroom__location').order_by('-created_at')[:5]
+            
+            for review in recent_reviews:
+                stats['recent_reviews'].append({
+                    'id': review.id,
+                    'bathroom_name': review.bathroom.name,
+                    'bathroom_location': review.bathroom.location.name,
+                    'rating': review.rating,
+                    'comment': review.comment or '',
+                    'created_at': review.created_at.strftime('%d/%m/%Y'),
+                    'bathroom_id': review.bathroom.id
+                })
+            
+            return JsonResponse(stats)
+            
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Formato de datos inválido"}, status=400)
+        except Exception as e:
+            print(f"Error en ProfileView: {str(e)}")  # Para debug
+            return JsonResponse({"error": f"Error interno del servidor: {str(e)}"}, status=500)

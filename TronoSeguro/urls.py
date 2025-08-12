@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from ToiFinder.views import chat_query, LoginView, CatalogView, DetailView
+from ToiFinder.views import chat_query, LoginView, CatalogView, DetailView, ProfileView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     path("chat/", chat_query, name="chat_query"),
     path('catalog', CatalogView.as_view(), name='catalog'),
     path('detail/<int:bathroom_id>/', DetailView.as_view(), name='detail'),
+    path('profile/', ProfileView.as_view(), name='profile'),
 ]
