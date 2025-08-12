@@ -120,8 +120,7 @@ class CatalogView(View):
         if search_query:
             bathrooms = bathrooms.filter(
                 Q(name__icontains=search_query) | 
-                Q(location__name__icontains=search_query) |
-                Q(description__icontains=search_query)
+                Q(location__name__icontains=search_query)
             )
             has_filters = True
 
@@ -206,6 +205,42 @@ class CatalogView(View):
         }
 
         return render(request, 'toifinder/catalog.html', context)
+
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            name = data.get('name')
+            location_name = data.get('location_name')
+            latitude = data.get('latitude')
+            longitude = data.get('longitude')
+            is_free = data.get('is_free', True)
+            has_accessibility = data.get('has_accessibility', False)
+            is_clean = data.get('is_clean', True)
+
+            if not all([name, location_name, latitude, longitude]):
+                return JsonResponse({"error": "Faltan campos requeridos"}, status=400)
+
+            # Create Location
+            location = Location.objects.create(
+                name=location_name,
+                latitude=latitude,
+                longitude=longitude
+            )
+
+            # Create Bathroom
+            bathroom = Bathroom.objects.create(
+                name=name,
+                location=location,
+                is_free=is_free,
+                has_accessibility=has_accessibility,
+                is_clean=is_clean
+            )
+
+            return JsonResponse({"message": "Baño agregado exitosamente", "bathroom_id": bathroom.id})
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Formato de datos inválido"}, status=400)
+        except Exception as e:
+            return JsonResponse({"error": f"Error al agregar el baño: {str(e)}"}, status=500)
 
 class DetailView(View):
     @method_decorator(csrf_exempt)
