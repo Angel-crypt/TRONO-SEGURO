@@ -2,10 +2,6 @@
 .env.*
 *.pyc
 __pycache__/
-*.sqlite3
 *.log
 *.pyo
 *.db
-migrations/
-chromadb/
-*.bin
