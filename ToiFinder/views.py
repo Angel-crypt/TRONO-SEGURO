@@ -271,6 +271,50 @@ class DetailView(View):
 
         return render(request, 'toifinder/detail.html', context)
 
+    def post(self, request, bathroom_id):
+        """
+        API para agregar una reseña al baño
+        """
+        try:
+            data = json.loads(request.body)
+            user_id = data.get('user_id')
+            rating = data.get('rating')
+            comment = data.get('comment')
+            
+            if not all([user_id, rating]):
+                return JsonResponse({"error": "Faltan campos requeridos (user_id, rating)"}, status=400)
+            
+            try:
+                user = User.objects.get(id=user_id)
+                bathroom = Bathroom.objects.get(id=bathroom_id)
+            except (User.DoesNotExist, Bathroom.DoesNotExist):
+                return JsonResponse({"error": "Usuario o baño no encontrado"}, status=404)
+            
+            # Verificar si el usuario ya ha dejado una reseña
+            if Review.objects.filter(user=user, bathroom=bathroom).exists():
+                return JsonResponse({"error": "Ya has dejado una reseña para este baño"}, status=400)
+            
+            # Crear la reseña
+            review = Review.objects.create(
+                bathroom=bathroom,
+                user=user,
+                rating=int(rating),
+                comment=comment
+            )
+            
+            return JsonResponse({
+                "message": "Reseña agregada exitosamente",
+                "review_id": review.id
+            })
+            
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Formato de datos inválido"}, status=400)
+        except ValueError:
+            return JsonResponse({"error": "Valor de rating inválido"}, status=400)
+        except Exception as e:
+            print(f"Error al agregar reseña: {str(e)}")
+            return JsonResponse({"error": f"Error interno del servidor: {str(e)}"}, status=500)
+
 class ProfileView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, *args, **kwargs):
