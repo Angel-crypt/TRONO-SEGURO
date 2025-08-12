@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,7 +31,6 @@
         <section class="hero">
             <h1>Catálogo de Baños</h1>
             <p>Encuentra baños limpios, accesibles y bien valorados cerca de ti. Tu comodidad es nuestra prioridad.</p>
-
             {% if has_filters %}
             <div class="results-summary">
                 <p><i class="fas fa-search"></i> Mostrando {{ results_count }} de {{ total_bathrooms }} baños
@@ -71,16 +69,18 @@
                         <label>Características</label>
                         <div class="filter-checkboxes">
                             <div class="checkbox-item">
-                                    <input type="checkbox" id="free" name="free" value="on" {% if current_free %}checked{% endif %}>
-                                    <label for="free">Gratuito</label>
+                                <input type="checkbox" id="free" name="free" value="on" {% if current_free %} checked {% endif %}>
+                                <label for="free">Gratuito</label>
                             </div>
+
                             <div class="checkbox-item">
-                                    <input type="checkbox" id="accessible" name="accessible" value="on" {% if current_accessible %}checked{% endif %}>
-                                    <label for="accessible">Accesible</label>
+                                <input type="checkbox" id="accessible" name="accessible" value="on" {% if current_accessible %} checked {% endif %}>
+                                <label for="accessible">Accesible</label>
                             </div>
+
                             <div class="checkbox-item">
-                                    <input type="checkbox" id="clean" name="clean" value="on" {% if current_clean %}checked{% endif %}>
-                                    <label for="clean">Limpio</label>
+                                <input type="checkbox" id="clean" name="clean" value="on" {% if current_clean %} checked {% endif %}>
+                                <label for="clean">Limpio</label>
                             </div>
                         </div>
                     </div>
@@ -90,10 +90,14 @@
                         <select name="order_by" id="order_by" class="filter-input filter-select"
                             onchange="this.form.submit()">
                             <option value="">Ordenar por...</option>
-                            <option value="rating_asc" {% if order_by == 'rating_asc' %}selected{% endif %}>Rating ↑</option>
-                            <option value="rating_desc" {% if order_by == 'rating_desc' %}selected{% endif %}>Rating ↓</option>
-                            <option value="reviews_asc" {% if order_by == 'reviews_asc' %}selected{% endif %}>Reseñas ↑</option>
-                            <option value="reviews_desc" {% if order_by == 'reviews_desc' %}selected{% endif %}>Reseñas ↓</option>
+                            <option value="rating_asc" {% if order_by == 'rating_asc' %}selected{% endif %}>Rating ↑
+                            </option>
+                            <option value="rating_desc" {% if order_by == 'rating_desc' %}selected{% endif %}>Rating ↓
+                            </option>
+                            <option value="reviews_asc" {% if order_by == 'reviews_asc' %}selected{% endif %}>Reseñas ↑
+                            </option>
+                            <option value="reviews_desc" {% if order_by == 'reviews_desc' %}selected{% endif %}>Reseñas ↓
+                            </option>
                         </select>
                     </div>
 
@@ -116,6 +120,7 @@
                                 <span>{{ bathroom.location.name }}</span>
                             </div>
                         </div>
+
                         <div class="card-rating">
                             <i class="fas fa-star"></i>
                             <span>
@@ -128,6 +133,11 @@
                                 {% if bathroom.review_count == 1 %}reseña{% else %}reseñas{% endif %})
                             </span>
                         </div>
+                    </div>
+
+                    <div class="card-coordinates">
+                        <i class="fas fa-crosshairs"></i>
+                        {{ bathroom.location.latitude|floatformat:4 }}, {{ bathroom.location.longitude|floatformat:4 }}
                     </div>
 
                     <div class="card-features">
@@ -247,5 +257,5 @@
     </footer>
 
 </body>
-    <script src="{% static 'ToiFinder/js/catalog.js' %}"></script>
+<script src="{% static 'ToiFinder/js/catalog.js' %}"></script>
 </html>
